@@ -142,8 +142,11 @@ html {
       @include m.wMax(439px) {
         @include m.flexC;
         flex-direction: column;
-        & li > a:visited {
+        & li > a {
           color: #fafafa;
+          &:visited {
+            color: #fafafa;
+          }
         }
       }
     }

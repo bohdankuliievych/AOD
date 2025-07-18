@@ -329,6 +329,9 @@ html::-webkit-scrollbar-thumb {
     justify-content: center;
     flex-direction: column;
   }
+  .header__items ul li > a {
+    color: #fafafa;
+  }
   .header__items ul li > a:visited {
     color: #fafafa;
   }
