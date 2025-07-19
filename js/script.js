@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   // ********************
-  console.log('The DOM is ready');
+  console.log('DOM is ready');
   // ********************
   // Get references to the button and the menu
   const menuDrawerButton = document.getElementById('header__menu-drawer');
@@ -11,16 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
   if (window.innerWidth >= 440) {
     navMenu.classList.toggle('hidden');
   }
-  // Add a click event listener to the button
   menuDrawerButton.addEventListener('click', () => {
-    // Toggle the 'hidden' class on the menu
     navMenu.classList.toggle('hidden');
-    // Toggle the 'open' class on the menu drawer icon for animation
-
     menuDrawerIcon.classList.toggle('open');
   });
   // ********************
-  // Close the menu when a link is clicked (for single-page navigation)
+  // Close the menu when a link is clicked
   navMenu.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
       if (window.innerWidth <= 440) {
@@ -32,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
   // ********************
-  // Close the menu when clicking outside of it (for larger screens)
+  // Close the menu when clicking outside of it
   document.addEventListener('click', (event) => {
     if (window.innerWidth <= 440) {
       // Check if the click was outside the menu and the button
@@ -50,11 +46,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // Close menu on resize if it's open and switches to desktop view
   window.addEventListener('resize', () => {
     if (window.innerWidth <= 440 && !navMenu.classList.contains('hidden')) {
-      // 768px is Tailwind's 'md' breakpoint
       navMenu.classList.add('hidden');
       menuDrawerIcon.classList.remove('open');
     }
-    // make nav visible if >440px
+    // Make nav visible if > 440px
     if (window.innerWidth > 440 && navMenu.classList.contains('hidden')) {
       navMenu.classList.remove('hidden');
     }
